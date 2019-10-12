@@ -79,13 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="nio理解nio三大核心 缓冲区Buffer:在nio中，所有数据都是用缓冲区处理的。实质上是一个数组。  通道Channel:Channel是一个通道，与流的不同处在于通道是双向的，读、写可以同时进行。  多用复用器Selector:提供选择已经就绪的任务的能力。Selector会不断地轮询注册在其上的Channel,如果某个Channel上面发生读或写事件，这个Channel就处于就绪状态，会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nio理解">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/nio理解/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="nio理解nio三大核心 缓冲区Buffer:在nio中，所有数据都是用缓冲区处理的。实质上是一个数组。  通道Channel:Channel是一个通道，与流的不同处在于通道是双向的，读、写可以同时进行。  多用复用器Selector:提供选择已经就绪的任务的能力。Selector会不断地轮询注册在其上的Channel,如果某个Channel上面发生读或写事件，这个Channel就处于就绪状态，会">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/pic/2.png">
+<meta property="og:image" content="http://yoursite.com/pic/3.png">
+<meta property="og:updated_time" content="2019-10-12T16:07:12.933Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="nio理解">
+<meta name="twitter:description" content="nio理解nio三大核心 缓冲区Buffer:在nio中，所有数据都是用缓冲区处理的。实质上是一个数组。  通道Channel:Channel是一个通道，与流的不同处在于通道是双向的，读、写可以同时进行。  多用复用器Selector:提供选择已经就绪的任务的能力。Selector会不断地轮询注册在其上的Channel,如果某个Channel上面发生读或写事件，这个Channel就处于就绪状态，会">
+<meta name="twitter:image" content="http://yoursite.com/pic/2.png">
 
 
 
@@ -115,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/13/nio理解/">
 
 
 
 
 
-  <title>Hexo</title>
+  <title>nio理解 | Hexo</title>
   
 
 
@@ -140,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,9 +230,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -256,9 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/13/nio理解/" itemprop="url">nio理解</a></h1>
+          <h1 class="post-title" itemprop="name headline">nio理解</h1>
         
 
         <div class="post-meta">
@@ -308,9 +312,7 @@
       
 
       
-        
-          
-            <h1 id="nio理解"><a href="#nio理解" class="headerlink" title="nio理解"></a>nio理解</h1><h2 id="nio三大核心"><a href="#nio三大核心" class="headerlink" title="nio三大核心"></a>nio三大核心</h2><ul>
+        <h1 id="nio理解"><a href="#nio理解" class="headerlink" title="nio理解"></a>nio理解</h1><h2 id="nio三大核心"><a href="#nio三大核心" class="headerlink" title="nio三大核心"></a>nio三大核心</h2><ul>
 <li><p>缓冲区Buffer:在nio中，所有数据都是用缓冲区处理的。实质上是一个数组。</p>
 </li>
 <li><p>通道Channel:Channel是一个通道，与流的不同处在于通道是双向的，读、写可以同时进行。</p>
@@ -350,8 +352,6 @@
 <h3 id="时序图-1"><a href="#时序图-1" class="headerlink" title="时序图"></a>时序图</h3><p><img src="/pic/3.png" alt="Alt text"></p>
 <h2 id="java-nio的演进"><a href="#java-nio的演进" class="headerlink" title="java nio的演进"></a>java nio的演进</h2><p>在早期的JDK1.4和1.5版本之前，JDK的Selector基于select/poll模型实现，它是基于IO复用技术的非阻塞IO,不是异步IO.在JDK1.5 update10和Linux core2.6以上版本，Sun优化了Selector的实现，它在底层使用epoll替换了select/poll，上层的API并没有变化，可以认为JDK NIO的一次性能优化，但是没改变IO模型。JDK1.7提供的NIO2.0新增了异步的套接字通道，它是真正的异步IO,在异步IO操作的时候可以传递信号变量，当操作完成之后会回调相关的方法，异步IO也被称为AIO。</p>
 
-          
-        
       
     </div>
     
@@ -368,144 +368,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/11/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-11T22:16:16+08:00">
-                2019-10-11
-              </time>
+              <a href="/2019/10/11/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -515,10 +399,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -526,6 +411,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -546,8 +435,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -589,6 +487,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nio理解"><span class="nav-number">1.</span> <span class="nav-text">nio理解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nio三大核心"><span class="nav-number">1.1.</span> <span class="nav-text">nio三大核心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nio实例TimeServer"><span class="nav-number">1.2.</span> <span class="nav-text">nio实例TimeServer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nio服务端主要创建过程"><span class="nav-number">1.2.1.</span> <span class="nav-text">nio服务端主要创建过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时序图"><span class="nav-number">1.2.2.</span> <span class="nav-text">时序图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nio实例TimeClient"><span class="nav-number">1.3.</span> <span class="nav-text">nio实例TimeClient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nio客户端主要创建过程"><span class="nav-number">1.3.1.</span> <span class="nav-text">nio客户端主要创建过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时序图-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">时序图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-nio的演进"><span class="nav-number">1.4.</span> <span class="nav-text">java nio的演进</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -729,6 +643,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
